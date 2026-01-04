@@ -67,3 +67,5 @@ Ask for a password input and save to a txt file as sha256 hash
 Ask for a password and validate using a stored hash on txt file
 (day 73) Check if password hash file exists, ask for a new password if not, if it exists, ask for the password, then validate using the stored hash txt file
 Ask for password input and check if it contains a digit w/o using regex
+Ask for password input and check if it contains lowercase letter w/o using regex
+Ask for password input and check if it contains a symbol w/o using regex
