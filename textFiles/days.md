@@ -69,3 +69,6 @@ Ask for a password and validate using a stored hash on txt file
 Ask for password input and check if it contains a digit w/o using regex
 Ask for password input and check if it contains lowercase letter w/o using regex
 Ask for password input and check if it contains a symbol w/o using regex
+Ask for passsword input and require all (digit, symbol, uppercase, lowercase)
+Ask for passwoord input and require at least 3 (digit, symbol, uppercase, lowercase)
+Ask for a password input, if new, require strong password and register, if password exists(hashed password txt file), require existing password
