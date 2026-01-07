@@ -1,7 +1,7 @@
 # Ask for a password input, if new, require strong password and register, if password exists(hashed password txt file), require existing password
 
-import re
-
+import os
+import hashlib
 
 class day74:
     def checkPass(s):
@@ -48,6 +48,22 @@ class day74:
                 return "error"
         else:
             return "Enter longer password"
+    def checkExist(s):
+        if day74.checkPass(s) == "strong" or day74.checkPass(s) == "moderate":
+            path = "D:/coding30minsAday/textFiles/textDay74P.txt"
+            if os.path.exists(path):
+                s = input("Enter password\n")
+                newS = hashlib.sha1(s.encode()).hexdigest()
+                with open(path, "r") as f:
+                    if newS in f.read():
+                        print("nice")
+                    else:
+                        print("missing")
+            else:
+                s = input("enter new password\n")
+                newP = hashlib.sha1(s.encode()).hexdigest()
+                with open(path, "w") as f:
+                    f.write(newP)
 
 s = input("Enter password\n")
-print(day74.checkPass(s))
+day74.checkExist(s)
