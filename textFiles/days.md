@@ -72,3 +72,5 @@ Ask for password input and check if it contains a symbol w/o using regex
 Ask for passsword input and require all (digit, symbol, uppercase, lowercase)
 Ask for passwoord input and require at least 3 (digit, symbol, uppercase, lowercase)
 Ask for a password input, if new, require strong password and register, if password exists(hashed password txt file), require existing password
+Ask for a credit/debit card input then validate using regex
+create function addToCsv() that will create a csv file or append a row to an existing csv file, returning the row#

@@ -1,6 +1,7 @@
 # Ask for a credit/debit card input then validate using regex
 
 import re
+import string
 
 class day75:
     def checkCard(s):
