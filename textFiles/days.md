@@ -74,3 +74,5 @@ Ask for passwoord input and require at least 3 (digit, symbol, uppercase, lowerc
 Ask for a password input, if new, require strong password and register, if password exists(hashed password txt file), require existing password
 Ask for a credit/debit card input then validate using regex
 create function addToCsv() that will create a csv file or append a row to an existing csv file, returning the row#
+create function readCsvRow(rowId) that returns a numeric array of the row values
+using readCSVRow(), create function readAllCsvRows()
