@@ -76,3 +76,4 @@ Ask for a credit/debit card input then validate using regex
 create function addToCsv() that will create a csv file or append a row to an existing csv file, returning the row#
 create function readCsvRow(rowId) that returns a numeric array of the row values
 using readCSVRow(), create function readAllCsvRows()
+create function getCsvColumnNumber(columnName) returns the position of the column (base 1)
