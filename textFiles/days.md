@@ -77,3 +77,4 @@ create function addToCsv() that will create a csv file or append a row to an exi
 create function readCsvRow(rowId) that returns a numeric array of the row values
 using readCSVRow(), create function readAllCsvRows()
 create function getCsvColumnNumber(columnName) returns the position of the column (base 1)
+create function getCsvCellValue(rowId, columnNumber)
