@@ -1,4 +1,3 @@
-// using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of rowId
 package TenMinsJava;
 
 import java.io.File;
@@ -6,45 +5,70 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class day81 {
+
     public static int[] searchCsvRows(String columnName, String value) {
+
+        ArrayList<Integer> result = new ArrayList<>();
+
         try {
-            ArrayList<Integer> result = new ArrayList<>();
             File file = new File("D:/coding30minsAday/textFiles/JTrialCsv.csv");
             Scanner fScan = new Scanner(file);
-            // initialize the first row or location for columns
-            String first = "";
-            int rowId = 1;
-            if (fScan.hasNextLine()) {
-                first = fScan.nextLine();
+
+            // Read header
+            if (!fScan.hasNextLine()) {
+                System.err.println("CSV not initialized");
+                return new int[0];
             }
-            else {
-                System.err.println("Csv not yet initialize");
-            }
-            // turns the values at the first row into an array
-            String values[] = first.split(",");
-            for (int i = 0; i < values.length; i++) {
-                // checks column name to i index and add 1 because i starts at 0
-                if (values[i].trim().toUpperCase().equals(columnName.toUpperCase())) {
-                    while (fScan.hasNextLine()) {
-                        String row[] = first.split(",");
-                        if (row[i].trim().equalsIgnoreCase(value)) {
-                            result.add(rowId);
-                        }
-                        rowId++;
-                    }
-                    for (int n = 0; n < result.size(); n++) {
-                        int num[] = new int[result.size()];
-                        num[i] = result.get(i);
-                        return num;
-                    }
+
+            String header = fScan.nextLine();
+            String[] columns = header.split(",");
+
+            // Find column index
+            int colIndex = -1;
+            for (int i = 0; i < columns.length; i++) {
+                if (columns[i].trim().equalsIgnoreCase(columnName)) {
+                    colIndex = i;
+                    break;
                 }
             }
+
+            if (colIndex == -1) {
+                System.err.println("Column not found");
+                return new int[0];
+            }
+
+            int rowId = 1;
+
+            // Read data rows
+            while (fScan.hasNextLine()) {
+                String line = fScan.nextLine();
+                String[] row = line.split(",");
+
+                if (row[colIndex].trim().equalsIgnoreCase(value)) {
+                    result.add(rowId);
+                }
+                rowId++;
+            }
+
+            fScan.close();
+
         } catch (Exception e) {
-            System.err.println("Error");
+            System.err.println("Error: " + e.getMessage());
         }
-        return new int[0];
+
+        // Convert ArrayList<Integer> → int[]
+        int[] output = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            output[i] = result.get(i);
+        }
+
+        return output;
     }
+
     public static void main(String[] args) {
-        System.out.println(searchCsvRows("second","2"));
+        int[] res = searchCsvRows("second", "2");
+        for (int r : res) {
+            System.out.println(r);
+        }
     }
 }
