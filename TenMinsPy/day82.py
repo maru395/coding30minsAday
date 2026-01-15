@@ -19,8 +19,6 @@ def update_csv_cell(row_id, column_number, value, file_path="D:/coding30minsAday
         with open(file_path, "w") as f:
             f.writelines(lines)
 
-        print("Cell updated successfully!")
-
     except Exception as e:
         print("Error:", e)
 

@@ -79,3 +79,5 @@ using readCSVRow(), create function readAllCsvRows()
 create function getCsvColumnNumber(columnName) returns the position of the column (base 1)
 create function getCsvCellValue(rowId, columnNumber)
 using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of rowId
+updateCSVRow (rowID, column, value) -updates the specified rowId row's column value
+deleteCSVRow(rowId) deletes a row from csv specified by the rowId
