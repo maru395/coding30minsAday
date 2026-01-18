@@ -83,3 +83,4 @@ updateCSVRow (rowID, column, value) -updates the specified rowId row's column va
 deleteCSVRow(rowId) deletes a row from csv specified by the rowId
 ask for an email input, add to csv (Create)
 ask for an email input, do not allow duplicates (findFirst)
+ask for an email & name input, add to csv (2 columns) (Create)
