@@ -81,3 +81,5 @@ create function getCsvCellValue(rowId, columnNumber)
 using readAllCsvRows(), create function searchCsvRows(columnName, value) return array of rowId
 updateCSVRow (rowID, column, value) -updates the specified rowId row's column value
 deleteCSVRow(rowId) deletes a row from csv specified by the rowId
+ask for an email input, add to csv (Create)
+ask for an email input, do not allow duplicates (findFirst)

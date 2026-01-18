@@ -4,11 +4,10 @@ package TenMinsJava;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class day82 {
-    public static boolean updateCsvCell(int rowId, int columnNumber, int value) {
+    public static void updateCsvCell(int rowId, int columnNumber, int value) {
         try {
             File file = new File("D:/coding30minsAday/textFiles/JTrialCsv.csv");
             Scanner fScan = new Scanner(file);
@@ -21,9 +20,9 @@ public class day82 {
             fScan.close();
 
             // modifies the value
+            // try lines.set()
             if (lines.size() >= rowId) {
                 String[] cells = lines.get(rowId - 1).split(",");
-                System.out.println(Arrays.toString(cells));
                 if (columnNumber <= cells.length) {
                     cells[columnNumber] = String.valueOf(value);
                     StringBuilder b = new StringBuilder();
@@ -44,9 +43,8 @@ public class day82 {
         } catch (Exception e) {
             System.err.println("Error");
         }
-        return true;
     }
     public static void main(String[] args) {
-        System.out.println(updateCsvCell(2, 3, 99));
+        updateCsvCell(2, 3, 99);
     }
 }
