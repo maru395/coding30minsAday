@@ -83,4 +83,9 @@ updateCSVRow (rowID, column, value) -updates the specified rowId row's column va
 deleteCSVRow(rowId) deletes a row from csv specified by the rowId
 ask for an email input, add to csv (Create)
 ask for an email input, do not allow duplicates (findFirst)
-ask for an email & name input, add to csv (2 columns) (Create)
+ask for an email & name input, add to csv (2 columns) (Create) 
+ask for an email & name input, if email is duplicate, update name(Update)
+Ask for a name, output all matching csv row (exact match) searchMultiple
+Ask for a text, search email or name then output matches
+Ask for a rowid, delete csv row after confirmation prompt
+read all csv row and output
