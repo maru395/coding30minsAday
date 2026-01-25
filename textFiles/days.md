@@ -89,3 +89,4 @@ Ask for a name, output all matching csv row (exact match) searchMultiple
 Ask for a text, search email or name then output matches
 Ask for a rowid, delete csv row after confirmation prompt
 read all csv row and output
+output csv as pretty table (text format)
