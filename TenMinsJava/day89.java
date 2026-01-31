@@ -21,6 +21,7 @@ public class day89 {
                 for (String s : temp) {
                     if (s.matches(name)) {
                         result.add(line);
+                        break;
                     }
                 }
             }

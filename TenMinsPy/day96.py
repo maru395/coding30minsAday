@@ -1,7 +1,6 @@
-# press S to search use feature in day89
+# refactor the search to also include partial text matches
 
 import csv
-from random import choice
 
 def search_multiple(name, file_path):
     result = []
@@ -10,20 +9,11 @@ def search_multiple(name, file_path):
         with open(file_path, newline='', encoding='utf-8') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
-                # Check each column for exact match
                 for cell in row:
-                    if name in cell:
+                    if name.lower() in cell.lower():
                         result.append(','.join(row))  # Join row as string
 
     except Exception as e:
         print(f"Error: {e}")
 
     return result
-
-def ask():
-    choice = input("enter s to search\n").strip()
-    if choice.lower() == "s":
-        search = input("Enter text").strip()
-        search_multiple(search)
-
-ask()

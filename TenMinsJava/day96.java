@@ -1,12 +1,11 @@
-// press S to search use feature in day89
+// refactor the search to also include partial text matches
 package TenMinsJava;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class day93 {
-
+public class day96 {
     public static String[] searchMultiple(String name) {
 
         ArrayList<String> result = new ArrayList<>();
@@ -19,8 +18,9 @@ public class day93 {
                 String line = fScan.nextLine().trim();
                 String temp [] = line.split(",");
                 for (String s : temp) {
-                    if (s.matches(name)) {
+                    if (s.toLowerCase().contains(name.toLowerCase())) {
                         result.add(line);
+                        break;
                     }
                 }
             }
@@ -36,16 +36,5 @@ public class day93 {
         }
 
         return output;
-    }
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Press s to search");
-        String choice = scan.nextLine();
-        if (choice.trim().toLowerCase().equals("s")) {
-            System.out.println("Enter text");
-            String search = scan.nextLine();
-            searchMultiple(search);
-        }
-        scan.close();
     }
 }

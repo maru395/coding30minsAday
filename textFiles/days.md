@@ -90,3 +90,8 @@ Ask for a text, search email or name then output matches
 Ask for a rowid, delete csv row after confirmation prompt
 read all csv row and output
 output csv as pretty table (text format)
+press S to search use feature in day89
+press A to add new row, feature in day76
+press D to delete a row, do feature from day90
+refactor the search to also include partial text matches
+press 'u' to update a row, ask for a rowId, then ask for the field values (day 82)
