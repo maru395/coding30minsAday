@@ -95,3 +95,5 @@ press A to add new row, feature in day76
 press D to delete a row, do feature from day90
 refactor the search to also include partial text matches
 press 'u' to update a row, ask for a rowId, then ask for the field values (day 82)
+addColumn(columnName) a function that will add a new column to the csv
+deleteColumn(columnName) a functionthat will delete the specified columnName from the csv
