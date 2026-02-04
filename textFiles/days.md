@@ -97,3 +97,6 @@ refactor the search to also include partial text matches
 press 'u' to update a row, ask for a rowId, then ask for the field values (day 82)
 addColumn(columnName) a function that will add a new column to the csv
 deleteColumn(columnName) a functionthat will delete the specified columnName from the csv
+press "c" to add new column to the csv
+press "D" to delete a column
+new function: renameColumn(oldName, newName) renames a column of the csv
