@@ -100,3 +100,4 @@ deleteColumn(columnName) a functionthat will delete the specified columnName fro
 press "c" to add new column to the csv
 press "D" to delete a column
 new function: renameColumn(oldName, newName) renames a column of the csv
+press "R" to rename a column

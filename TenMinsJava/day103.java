@@ -1,4 +1,3 @@
-// new function: renameColumn(oldName, newName) renames a column of the csv
 package TenMinsJava;
 
 import java.io.File;
@@ -10,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class day102 {
+public class day103 {
     public static void renameColumn(String oldName, String newName) {
         String filePath = "D:/coding30minsAday/textFiles/JTrialCsv.csv";
         ArrayList<String> lines = new ArrayList<>();
@@ -64,5 +63,18 @@ public class day102 {
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press R to rename column");
+        String choice = scan.nextLine();
+        if (choice.trim().toLowerCase().equals("R")) {
+            System.out.println("Enter old column name");
+            String oldName = scan.nextLine().trim();
+            System.out.println("Enter new column name");
+            String newName = scan.nextLine().trim();
+            renameColumn(oldName, newName);;
+        }
+        scan.close();
     }
 }
