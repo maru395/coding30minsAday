@@ -24,6 +24,7 @@ public class day105 {
 
         // return false;
 
+        //faster approach
         Set<String> ALLOWED_DOMAINS = new HashSet<>(Arrays.asList(
             "gmail.com", "googlemail.com",
             "yahoo.com", "ymail.com", "rocketmail.com", "yahoo.co.uk", "yahoo.ca",
